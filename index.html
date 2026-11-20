@@ -163,6 +163,13 @@
   .tag { font: .66rem var(--mono); color: var(--muted); border: 1px solid var(--border); border-radius: 2px; padding: .1rem .4rem; letter-spacing: .03em; }
   .when { font: .7rem var(--mono); color: var(--gold); white-space: nowrap; }
 
+  .group-label { font: 500 .7rem var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin: 0 0 1rem; display: flex; align-items: center; gap: .8rem; }
+  .group-label::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+  .grid + .group-label { margin-top: 3rem; }
+  a.card { text-decoration: none; color: inherit; }
+  .card .view { font: 500 .7rem var(--mono); letter-spacing: .08em; color: var(--ink); transition: color .2s, transform .2s; }
+  .card:hover .view { color: var(--green); transform: translateX(3px); }
+
   /* writing */
   .post { display: block; padding: 1.8rem 0; border-bottom: 1px solid var(--border); }
   .post .meta { font: .72rem var(--mono); color: var(--muted); letter-spacing: .06em; text-transform: uppercase; display: flex; gap: .6rem; flex-wrap: wrap; margin-bottom: .55rem; }
@@ -229,7 +236,7 @@
   </button>
   <div class="nav-menu" id="menu">
     <a href="#about"><b>01</b>about</a>
-    <a href="#work"><b>02</b>work</a>
+    <a href="#work"><b>02</b>experience</a>
     <a href="#writing"><b>03</b>writing</a>
     <a href="#credentials"><b>04</b>credentials</a>
     <a href="#contact"><b>05</b>contact</a>
@@ -244,7 +251,7 @@
     <h1>welcome to<br />wesley's <em>ledger</em></h1>
     <p class="tagline">keeping notes where finance, data, and decision-making meet</p>
     <div class="hero-ctas">
-      <a class="btn solid" href="#work">VIEW MY WORK</a>
+      <a class="btn solid" href="#work">VIEW EXPERIENCE</a>
       <a class="text-link" href="#writing">read my writing →</a>
     </div>
 
@@ -283,61 +290,59 @@
     </div>
   </section>
 
-  <!-- ============ DEALS / WORK ============ -->
+  <!-- ============ EXPERIENCE ============ -->
   <section class="block" id="work">
     <div class="wrap">
       <div class="sec-head reveal">
-        <div><p class="eyebrow"><b>02</b>work</p><h2>selected work</h2></div>
-        <div class="chips" role="group" aria-label="filter projects">
-          <button class="chip on" data-f="all">ALL</button>
-          <button class="chip" data-f="finance">FINANCE</button>
-          <button class="chip" data-f="strategy">STRATEGY</button>
-          <button class="chip" data-f="impact">IMPACT</button>
-        </div>
+        <div><p class="eyebrow"><b>02</b>experience</p><h2>experience & activities</h2></div>
       </div>
 
+      <!-- To add an organisation: copy one <a class="card org"> block, then make its page by copying a folder in /experience/. -->
+      <p class="group-label reveal">present</p>
       <div class="grid">
-        <!-- To add a project: copy one <article> block. data-cat = finance / strategy / impact (space-separated). -->
-        <article class="card reveal" data-cat="finance">
+        <a class="card org reveal" href="experience/wusif/">
           <div class="card-in">
             <div class="stone">
-              <div class="type">equity research</div>
-              <h3>EnerSys</h3>
-              <div class="deal">NYSE: ENS · team stock pitch</div>
-              <span class="role">macro & valuation</span>
+              <div class="type">student investment fund</div>
+              <h3>WashU Student Investment Fund</h3>
+              <div class="deal">WUSIF</div>
+              <span class="role">junior analyst</span>
             </div>
-            <p class="desc">owned the third thesis of our team pitch: the macro backdrop and the valuation work behind our price target.</p>
-            <div class="foot"><div class="tags"><span class="tag">valuation</span><span class="tag">macro</span></div><span class="when">FALL 2026</span></div>
+            <p class="desc">WashU's student-run investment fund, where sector teams research, pitch and manage stocks for the fund's portfolio.</p>
+            <div class="foot"><span class="when">AUG 2026 – PRESENT</span><span class="view">VIEW WORK →</span></div>
           </div>
-        </article>
+        </a>
 
-        <article class="card reveal" data-cat="strategy">
+        <a class="card org reveal" href="experience/consult-your-community/">
           <div class="card-in">
             <div class="stone">
-              <div class="type">case competition</div>
-              <h3>The Walt Disney Co.</h3>
-              <div class="deal">destination park entry · Brazil</div>
-              <span class="role">strategy team</span>
+              <div class="type">pro bono consulting</div>
+              <h3>Consult Your Community</h3>
+              <div class="deal">WashU chapter · St. Louis</div>
+              <span class="role">consultant</span>
             </div>
-            <p class="desc">evaluated a Disney park in Brazil — siting, competitors like Beto Carrero World and Hopi Hari, and a franchise structure modelled on Disney's Japan partnership so Disney doesn't carry the capex.</p>
-            <div class="foot"><div class="tags"><span class="tag">market entry</span><span class="tag">franchising</span></div><span class="when">FALL 2026</span></div>
+            <p class="desc">a student-run organisation that provides free consulting to small businesses and non-profits in the St. Louis community.</p>
+            <div class="foot"><span class="when">AUG 2026 – PRESENT</span><span class="view">VIEW WORK →</span></div>
           </div>
-        </article>
+        </a>
 
-        <article class="card reveal" data-cat="finance strategy">
+        <a class="card org reveal" href="experience/journal-of-economics/">
           <div class="card-in">
             <div class="stone">
-              <div class="type">operating model</div>
-              <h3>Bear Cuts</h3>
-              <div class="deal">profitability, staffing & capacity</div>
-              <span class="role">model build</span>
+              <div class="type">student publication</div>
+              <h3>WashU Journal of Economics</h3>
+              <div class="deal">WUJOE</div>
+              <span class="role">writer</span>
             </div>
-            <p class="desc">an editable profitability, staffing and capacity model for a campus business, with a cancellation and bottleneck analysis distilled onto one slide.</p>
-            <div class="foot"><div class="tags"><span class="tag">excel</span><span class="tag">ops</span></div><span class="when">FALL 2026</span></div>
+            <p class="desc">WashU's undergraduate economics publication, covering policy, markets and economic research.</p>
+            <div class="foot"><span class="when">FALL 2026 – PRESENT</span><span class="view">VIEW WORK →</span></div>
           </div>
-        </article>
+        </a>
+      </div>
 
-        <article class="card reveal" data-cat="strategy">
+      <p class="group-label reveal">past</p>
+      <div class="grid">
+        <a class="card org reveal" href="experience/reckitt/">
           <div class="card-in">
             <div class="stone">
               <div class="type">internship</div>
@@ -345,25 +350,12 @@
               <div class="deal">e-commerce & human resources</div>
               <span class="role">intern</span>
             </div>
-            <p class="desc">six months across e-commerce and HR at a global consumer goods company — helping grow TikTok Shop revenue, and supporting talent acquisition and HR strategy through a restructuring.</p>
-            <div class="foot"><div class="tags"><span class="tag">e-commerce</span><span class="tag">hr strategy</span></div><span class="when">JAN–JUN 2026</span></div>
+            <p class="desc">a global consumer health and hygiene company behind brands like Dettol, Durex and Finish.</p>
+            <div class="foot"><span class="when">JAN – JUL 2026</span><span class="view">VIEW WORK →</span></div>
           </div>
-        </article>
+        </a>
 
-        <article class="card reveal" data-cat="strategy impact">
-          <div class="card-in">
-            <div class="stone">
-              <div class="type">competition</div>
-              <h3>FedEx × Junior Achievement</h3>
-              <div class="deal">International Trade Challenge</div>
-              <span class="role">1st runner-up · APAC</span>
-            </div>
-            <p class="desc">designed and pitched a circular-economy product in 48 hours against 60 finalists from 14 countries, after placing first of 2,000 students in Singapore.</p>
-            <div class="foot"><div class="tags"><span class="tag">product</span><span class="tag">pitching</span></div><span class="when">2024</span></div>
-          </div>
-        </article>
-
-        <article class="card reveal" data-cat="impact">
+        <a class="card org reveal" href="experience/cake-from-the-hearts/">
           <div class="card-in">
             <div class="stone">
               <div class="type">non-profit</div>
@@ -371,10 +363,10 @@
               <div class="deal">Singapore & Japan</div>
               <span class="role">founder</span>
             </div>
-            <p class="desc">founded a non-profit delivering birthday celebrations to children from low-income families in Singapore and Japan.</p>
-            <div class="foot"><div class="tags"><span class="tag">founder</span><span class="tag">community</span></div><span class="when">2023–2025</span></div>
+            <p class="desc">a non-profit delivering birthday celebrations to children from low-income families.</p>
+            <div class="foot"><span class="when">NOV 2023 – APR 2025</span><span class="view">VIEW WORK →</span></div>
           </div>
-        </article>
+        </a>
       </div>
     </div>
   </section>
@@ -386,7 +378,15 @@
         <div><p class="eyebrow"><b>03</b>writing</p><h2>essays & articles</h2></div>
       </div>
 
-      <!-- To add a post: copy this <a class="post"> block. -->
+      <!-- To add a post: copy this <a class="post"> block. WUJOE articles go here AND on experience/journal-of-economics/ -->
+      <a class="post reveal" href="writing/missouri-sports-betting/">
+        <div class="meta"><span class="src">WashU Journal of Economics</span><span>·</span><span>public finance</span><span>·</span><span>4 min read</span></div>
+        <h3>Can Missouri bank on sports betting?</h3>
+        <blockquote>"to what extent can the state of Missouri rely on sports betting as a meaningful source of tax revenue?"</blockquote>
+        <p class="sum">nearly a year into legalization, billions have been wagered but the tax take is modest — and tax design, not casino substitution, explains why.</p>
+        <span class="go">READ THE ARTICLE →</span>
+      </a>
+
       <a class="post reveal" href="https://www.theedgesingapore.com/digitaledge/digital-economy/why-defi-must-change-survive" target="_blank" rel="noopener">
         <div class="meta"><span class="src">The Edge Singapore</span><span>·</span><span>essay</span><span>·</span><span>fintech</span></div>
         <h3>Why DeFi must change to survive</h3>
@@ -438,7 +438,7 @@
       <div class="row">
         <a class="btn solid" href="mailto:ng.w@wustl.edu">EMAIL ME</a>
         <a class="btn" href="https://www.linkedin.com/in/wesleyngyd/" target="_blank" rel="noopener">LINKEDIN</a>
-        <a class="btn" href="https://drive.google.com/file/d/1o93c_nwfSamTzpbz3V9-ZOIfXz2iKvWJ/view?usp=sharing" target="_blank" rel="noopener">CV</a>
+        <a class="btn" href="Wesley_Resume_final.pdf" target="_blank" rel="noopener">RESUME</a>
       </div>
     </div>
   </section>
@@ -448,7 +448,7 @@
   <div class="links">
     <a href="https://www.linkedin.com/in/wesleyngyd/" target="_blank" rel="noopener">LINKEDIN</a>
     <a href="mailto:ng.w@wustl.edu">EMAIL</a>
-    <a href="https://drive.google.com/file/d/1o93c_nwfSamTzpbz3V9-ZOIfXz2iKvWJ/view?usp=sharing" target="_blank" rel="noopener">CV</a>
+    <a href="Wesley_Resume_final.pdf" target="_blank" rel="noopener">RESUME</a>
   </div>
   © <span id="yr">2026</span> WESLEY NG YU DE
 </footer>
@@ -478,13 +478,6 @@
 
   // scroll hint
   document.getElementById('turn').addEventListener('click', () => document.getElementById('about').scrollIntoView({ behavior: 'smooth' }));
-
-  // project filters
-  document.querySelectorAll('.chip').forEach(c => c.addEventListener('click', () => {
-    document.querySelectorAll('.chip').forEach(o => o.classList.toggle('on', o === c));
-    const f = c.dataset.f;
-    document.querySelectorAll('.card').forEach(card => card.classList.toggle('hide', f !== 'all' && !card.dataset.cat.split(' ').includes(f)));
-  }));
 
   // fade-in on scroll
   const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }), { threshold: 0.12 });
