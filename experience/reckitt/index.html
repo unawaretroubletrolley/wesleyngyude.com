@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Reckitt — wesley's ledger</title>
+<meta name="description" content="Wesley Ng Yu De at Reckitt: E-commerce &amp; HR Intern, Jan – Jul 2026." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%231b2a41'/><text x='50' y='70' font-size='60' text-anchor='middle' font-family='Georgia,serif' fill='%23f3f1e8'>w</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --paper: #f3f1e8; --paper-hi: #f9f8f3; --rule: rgba(47,107,79,.07);
+    --ink: #1b2a41; --ink-2: #4a5566; --muted: #7d8590; --border: #d9d6c9;
+    --green: #2f6b4f; --gold: #b8893b;
+    --serif: "Newsreader", Georgia, serif;
+    --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  body { margin: 0; font-family: var(--serif); color: var(--ink); background-color: var(--paper);
+    background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 31px, var(--rule) 31px, var(--rule) 32px); }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
+  ::selection { background: rgba(184,137,59,.3); }
+
+  .topbar { position: sticky; top: 0; z-index: 20; display: flex; justify-content: space-between; align-items: center; padding: .8rem 1.5rem; background: rgba(243,241,232,.9); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); font: .74rem var(--mono); letter-spacing: .06em; }
+  .topbar a { text-decoration: none; }
+  .topbar a:hover { color: var(--green); }
+
+  main { max-width: 760px; margin: 0 auto; padding: 4rem 1.5rem 3rem; }
+  .kicker { font: .74rem var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .kicker b { color: var(--green); font-weight: 500; }
+  h1 { font-weight: 300; font-size: clamp(2.2rem, 6vw, 3.2rem); line-height: 1.08; letter-spacing: -.01em; margin: .8rem 0 .3rem; }
+  .short { font-style: italic; color: var(--muted); font-size: 1.1rem; margin: 0 0 1.2rem; }
+  .desc { font-size: 1.2rem; line-height: 1.7; color: var(--ink-2); margin: 0 0 2rem; }
+
+  .facts { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--ink); background: var(--paper-hi); margin-bottom: 3.5rem; }
+  .fact { padding: .9rem 1.1rem; }
+  .fact + .fact { border-left: 1px solid var(--border); }
+  .fact .k { font: .66rem var(--mono); color: var(--muted); letter-spacing: .08em; text-transform: uppercase; }
+  .fact .v { font-size: 1.15rem; margin-top: .15rem; }
+
+  .sec-head { display: flex; justify-content: space-between; align-items: flex-end; padding-bottom: .8rem; border-bottom: 1px solid var(--ink); margin-bottom: .5rem; }
+  .eyebrow { font: .72rem var(--mono); color: var(--muted); letter-spacing: .1em; text-transform: uppercase; margin: 0 0 .35rem; }
+  .sec-head h2 { font-weight: 300; font-size: 1.7rem; margin: 0; }
+
+  /* role write-up (optional) */
+  .role-text p { font-size: 1.1rem; line-height: 1.8; margin: 1.2rem 0; }
+
+  /* work entries */
+  .entry { display: block; text-decoration: none; padding: 1.6rem 0; border-bottom: 1px solid var(--border); }
+  .entry .meta { font: .7rem var(--mono); color: var(--muted); letter-spacing: .06em; text-transform: uppercase; display: flex; gap: .6rem; margin-bottom: .45rem; }
+  .entry .meta .kind { color: var(--green); }
+  .entry h3 { font-weight: 400; font-size: 1.45rem; margin: 0 0 .45rem; transition: color .2s; }
+  .entry:hover h3 { color: var(--green); }
+  .entry .sum { color: var(--muted); margin: 0; font-size: 1rem; }
+  .entry .go { display: inline-block; margin-top: .6rem; font: .72rem var(--mono); color: var(--muted); letter-spacing: .05em; transition: color .2s; }
+  .entry:hover .go { color: var(--green); }
+
+  .empty { margin-top: 1.5rem; border: 1px dashed var(--border); background: var(--paper-hi); padding: 2rem 1.5rem; text-align: center; }
+  .empty .mono-label { font: 500 .7rem var(--mono); letter-spacing: .12em; color: var(--gold); margin: 0 0 .4rem; }
+  .empty p { margin: 0; color: var(--muted); font-style: italic; }
+
+  .back { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; font: .74rem var(--mono); letter-spacing: .05em; border-top: 1px solid var(--ink); padding-top: 1.2rem; margin-top: 4rem; }
+  .back a { text-decoration: none; }
+  .back a:hover { color: var(--green); }
+  footer { text-align: center; padding: 2.5rem 1.5rem; font: .72rem var(--mono); color: var(--muted); letter-spacing: .05em; }
+
+  @media (max-width: 640px) {
+    main { padding-top: 2.5rem; }
+    .facts { grid-template-columns: 1fr; }
+    .fact + .fact { border-left: 0; border-top: 1px solid var(--border); }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="../../">← WESLEY'S LEDGER</a>
+  <a href="../../#work">ALL EXPERIENCE</a>
+</div>
+
+<main>
+  <p class="kicker"><b>internship</b> · past</p>
+  <h1>Reckitt</h1>
+  <p class="short">e-commerce &amp; human resources</p>
+  <p class="desc">A global consumer health and hygiene company behind brands like Dettol, Durex and Finish.</p>
+
+  <div class="facts">
+    <div class="fact"><div class="k">role</div><div class="v">E-commerce &amp; HR Intern</div></div>
+    <div class="fact"><div class="k">dates</div><div class="v">Jan – Jul 2026</div></div>
+    <div class="fact"><div class="k">location</div><div class="v">Singapore</div></div>
+  </div>
+
+  <!-- ===== OPTIONAL: what I do here. Delete the comment markers around this block to show it. =====
+  <section class="role-text">
+    <div class="sec-head"><div><p class="eyebrow">my role</p><h2>what i do</h2></div></div>
+    <p>Write a short paragraph about your responsibilities here.</p>
+  </section>
+  ===== -->
+
+  <section>
+    <div class="sec-head"><div><p class="eyebrow">work</p><h2>what i've worked on</h2></div></div>
+
+    <!-- To add a piece of work, copy this block (and delete the "coming soon" box if it's there):
+      <a class="entry" href="LINK-TO-FILE-OR-PAGE">
+        <div class="meta"><span class="kind">stock pitch</span><span>·</span><span>fall 2026</span></div>
+        <h3>Title of the work</h3>
+        <p class="sum">One or two sentences on what you did and the result.</p>
+        <span class="go">VIEW →</span>
+      </a>
+    -->
+      <div class="empty">
+        <p class="mono-label">WRITE-UPS COMING SOON</p>
+        <p>Details of my work here will be added shortly.</p>
+      </div>
+  </section>
+
+  <div class="back">
+    <a href="../../#work">← BACK TO EXPERIENCE</a>
+    <a href="../../#contact">GET IN TOUCH →</a>
+  </div>
+</main>
+
+<footer>© <span id="yr">2026</span> WESLEY NG YU DE</footer>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
